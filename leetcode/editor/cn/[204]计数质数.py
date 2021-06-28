@@ -34,6 +34,7 @@
 
 # leetcode submit region begin(Prohibit modification and deletion)
 import math
+from collections import OrderedDict
 
 
 class Solution(object):
@@ -42,5 +43,18 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        nums = set([i for i in range(2, int(math.sqrt(n) + 1))])
+        nums = [False] * n
+        count = 0
+        for i in range(2, n):
+            if nums[i]:
+                continue
+
+            if not nums[i]:
+                count += 1
+                for x in range(i, n, i):
+                    nums[x] = True
+        return count
 # leetcode submit region end(Prohibit modification and deletion)
+
+if __name__ == '__main__':
+    Solution().countPrimes(499979)
