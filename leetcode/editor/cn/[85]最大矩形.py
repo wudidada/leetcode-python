@@ -47,7 +47,7 @@
 #  rows == matrix.length 
 #  cols == matrix[0].length 
 #  1 <= row, cols <= 200 
-#  matrix[i][j] 为 '0' 或 '1' 
+#  matrix[i][j] 为 '0'  或 '1'
 #  
 # 
 #  Related Topics 栈 数组 动态规划 矩阵 单调栈 👍 1368 👎 0

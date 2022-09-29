@@ -18,3 +18,8 @@ def print_list(head):
         res.append(head.val)
         head = head.next
     print(res)
+
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(row)
