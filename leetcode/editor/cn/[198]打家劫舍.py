@@ -41,10 +41,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        prev = nums[0]
-        prev_prev = 0
-        for i in range(1, len(nums)):
-            prev_prev, prev = prev, max(prev_prev+nums[i], prev)
-        return prev
+        n = len(nums)
+        if n < 3:
+            return max(nums)
+        pre3, pre2, pre1 = nums[0], nums[1], nums[0] + nums[2]
+        for num in nums[3:]:
+            curr = max(pre3, pre2) + num
+            pre3, pre2, pre1 = pre2, pre1, curr
+        return max(pre3, pre2, pre1)
 
 # leetcode submit region end(Prohibit modification and deletion)
